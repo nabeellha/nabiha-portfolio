@@ -1,0 +1,4 @@
+import type { Metadata } from "next"; import { Inter } from "next/font/google"; import "./globals.css";
+const inter=Inter({subsets:["latin"],variable:"--font-inter"});
+export const metadata:Metadata={metadataBase:new URL("https://nabihaasim.dev"),title:{default:"Nabiha Asim | Full Stack Developer",template:"%s | Nabiha Asim"},description:"Nabiha Asim — Full Stack Developer, DevOps enthusiast, and Computer Science student.",alternates:{canonical:"/"},openGraph:{type:"website",title:"Nabiha Asim | Full Stack Developer",description:"Modern web applications and scalable cloud solutions."},twitter:{card:"summary_large_image",title:"Nabiha Asim | Full Stack Developer",description:"Modern web applications and scalable cloud solutions."}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" className="bg-ink"><body className={inter.variable}>{children}</body></html>}

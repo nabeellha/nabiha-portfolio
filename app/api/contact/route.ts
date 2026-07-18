@@ -1,0 +1,5 @@
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+const schema=z.object({name:z.string().trim().min(2).max(80),email:z.string().email().max(254),subject:z.string().trim().min(3).max(160),message:z.string().trim().min(10).max(3000),website:z.string().max(0).optional()});
+const hits=new Map<string,{count:number;start:number}>();
+export async function POST(req:NextRequest){const ip=req.headers.get("x-forwarded-for")?.split(",")[0].trim()??"anonymous",now=Date.now(),record=hits.get(ip);if(record&&now-record.start<60_000&&record.count>=5)return NextResponse.json({error:"Too many requests"},{status:429,headers:{"Retry-After":"60"}});if(!record||now-record.start>=60_000)hits.set(ip,{count:1,start:now});else record.count++;try{const data=schema.parse(await req.json());if(data.website)return NextResponse.json({ok:true});console.info("contact_received",{name:data.name,email:data.email,at:new Date().toISOString()});return NextResponse.json({ok:true},{status:201})}catch{return NextResponse.json({error:"Invalid request"},{status:400})}}

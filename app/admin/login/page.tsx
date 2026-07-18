@@ -1,0 +1,2 @@
+import { LockKeyhole } from "lucide-react"; import { AdminLoginForm } from "@/components/admin-login-form";
+export default function Login(){return <main className="grid min-h-screen place-items-center p-6"><section className="glass w-full max-w-md rounded-3xl p-8"><LockKeyhole className="text-cyan"/><h1 className="mt-5 text-2xl font-semibold text-white">Admin access</h1><p className="mt-2 text-sm text-slate-400">Sign in with the administrator credentials configured for this deployment.</p><AdminLoginForm/></section></main>}

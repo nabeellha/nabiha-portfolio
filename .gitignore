@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build
+dist/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Package manager
+.pnpm-store/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

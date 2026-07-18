@@ -1,0 +1,1 @@
+import type { MetadataRoute } from "next"; export default function sitemap():MetadataRoute.Sitemap{return ["","/projects"].map(url=>({url:`https://nabihaasim.dev${url}`,lastModified:new Date(),changeFrequency:"monthly",priority:url?0.8:1}))}

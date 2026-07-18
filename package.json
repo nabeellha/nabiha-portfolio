@@ -1,0 +1,19 @@
+{
+  "name": "nabiha-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "lint": "next lint" },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.9.2",
+    "lucide-react": "^0.468.0",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": { "@types/node": "^22.10.5", "@types/react": "^19.0.3", "autoprefixer": "^10.4.20", "eslint": "^9.18.0", "eslint-config-next": "15.2.4", "postcss": "^8.5.1", "tailwindcss": "^3.4.17", "typescript": "^5.7.2" }
+}
